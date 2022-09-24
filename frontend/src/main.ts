@@ -1,9 +1,9 @@
 import { createApp, provide, h } from 'vue'
-import './style.css'
+import { DefaultApolloClient } from '@vue/apollo-composable'
 import App from './App.vue'
 import router from './router/index'
-import { DefaultApolloClient } from '@vue/apollo-composable'
 import { apolloClient } from './Gql/ApolloClient'
+import './style.css'
 
 createApp({
     setup: () => {

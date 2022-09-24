@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "serve": "vite",
+    "test": "cypress open",
     "lint": "eslint \"src/**/*.{js,ts,vue}\"",
     "lint:fix": "eslint \"src/**/*.{js,ts,vue}\" --fix",
     "prettier": "prettier \"src/**/*.{css,js,vue,ts}\"",
@@ -32,7 +33,7 @@
     "@vue/eslint-config-typescript": "^11.0.0",
     "autoprefixer": "^10.4.11",
     "babel-eslint": "^10.1.0",
-    "cypress": "^10.6.0",
+    "cypress": "^10.8.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",

@@ -10,10 +10,9 @@ const resolverMap: any = {
     machines() {
       return data;
     },
-    sensorData (_: any, { from, name, to, sname }: any ) {
-      const res = data.find((mach) => mach.name === name)?.sensors
-        .find((sensor) => sensor.name === sname)?.data
-      return res
+    sensorData(_: any, { from, name, to, sname }: any) {
+      const res = data.find((mach) => mach.name === name)?.sensors.find((sensor) => sensor.name === sname)?.data;
+      return res;
     },
   },
 };

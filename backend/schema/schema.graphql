@@ -1,49 +1,48 @@
-
 schema {
-    query: Query
+  query: Query
 }
 
 type GPSPosition {
-    lat: String!
-    long: String!
+  lat: String!
+  long: String!
 }
 
 type Machine {
-    lastKnownPosition: GPSPosition
-    name: String!
-    sensors: [Sensor!]
+  lastKnownPosition: GPSPosition
+  name: String!
+  sensors: [Sensor!]
 }
 
 type Query {
-    machine(where: MachineWhereUniqInput!): Machine
-    machines: [Machine!]
-    sensorData(from: DateTime!, name: String!, to: DateTime!, sname: String!): [SensorDataPoint]
+  machine(where: MachineWhereUniqInput!): Machine
+  machines: [Machine!]
+  sensorData(from: DateTime!, name: String!, to: DateTime!, sname: String!): [SensorDataPoint]
 }
 
 type Sensor {
-    machine: Machine!
-    name: String!
-    data: [SensorDataPoint!]
+  machine: Machine!
+  name: String!
+  data: [SensorDataPoint!]
 }
 
 type SensorDataPoint {
-    timestamp: DateTime!
-    value: Float!
+  timestamp: DateTime!
+  value: Float!
 }
 
 scalar DateTime
 
 input GPSPositionInput {
-    lat: String!
-    long: String!
+  lat: String!
+  long: String!
 }
 
 input MachineWhereUniqInput {
-    lastKnownPosition: GPSPositionInput
-    name: String
-    sensors: [SensorInput]
+  lastKnownPosition: GPSPositionInput
+  name: String
+  sensors: [SensorInput]
 }
 
 input SensorInput {
-    name: String!
+  name: String!
 }

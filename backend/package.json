@@ -5,7 +5,11 @@
   "main": "main.ts",
   "scripts": {
     "start": "nodemon main.ts",
-    "lint": "eslint ./**.ts"
+    "test": "jest",
+    "lint": "eslint .",
+    "prettier": "prettier ./**.ts",
+    "lint:fix": "eslint ./**.ts --fix",
+    "prettier:fix": "prettier ./**.ts --write"
   },
   "keywords": [],
   "author": "",
@@ -24,8 +28,10 @@
     "graphql-import-node": "^0.0.5",
     "graphql-tools": "^8.3.6",
     "http": "^0.0.1-security",
+    "jest": "^29.0.3",
     "ncp": "^2.0.0",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "supertest": "^6.2.4"
   },
   "devDependencies": {
     "@types/compression": "^1.7.2",
