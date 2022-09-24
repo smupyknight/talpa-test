@@ -3,23 +3,9 @@ import SensorMachineCard from './SensorMachineCard.vue'
 import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
 import { watch } from 'vue'
-
-const GETALLMACHINES = gql`
-    query Query {
-        machines {
-            name
-            lastKnownPosition {
-                lat
-                long
-            }
-        }
-    }
-`
+import { GETALLMACHINES } from "../../Gql/Queries";
 
 const { result } = useQuery(GETALLMACHINES)
-watch(result, (result) => {
-  console.log(result)
-})
 </script>
 
 <template>

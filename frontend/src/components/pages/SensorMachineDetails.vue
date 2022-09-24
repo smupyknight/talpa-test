@@ -1,39 +1,25 @@
 <script lang="ts" setup>
-import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { GETMACHINE, GETSENSORDATA } from '../../Gql/Queries'
 
 const route = useRoute()
 const where = { name: route.params.name }
 const from = ref('1994-01-01T00:00:00.000Z')
 const to = ref('2023-01-01T00:00:00.000Z')
 const name = ref(route.params.name)
-const GETMACHINE = gql`
-    query ($where: MachineWhereUniqInput!) {
-        machine(where: $where) {
-            name
-            sensors {
-                name
-            }
-        }
-    }
-`
+const sname = ref('')
 
 const machine = useQuery(GETMACHINE, { where })
-const GETSENSORDATA = gql`
-    query ($from: DateTime!, $name: String!, $to: DateTime!) {
-        sensorData(from: $from, name: $name, to: $to) {
-            value
-            timestamp
-        }
-    }
-`
 
-const sensordata = useQuery(GETSENSORDATA, {
+
+
+let sensordata = useQuery(GETSENSORDATA, {
     from: from.value,
     name: name.value,
     to: to.value,
+    sname: sname.value,
 })
 
 const mach = ref()
@@ -41,11 +27,32 @@ const data = ref()
 
 watch(machine.result, (cb) => {
     mach.value = cb.machine
+    sname.value = cb.machine.sensors[0]?.name
+    sensordata.refetch({
+        from: from.value,
+        name: name.value,
+        to: to.value,
+        sname: sname.value,
+    })
 })
 
 watch(sensordata.result, (cb) => {
     data.value = cb.sensorData
 })
+
+const setSensor = (sensor: string) => {
+    sname.value = sensor
+    sensordata.refetch({
+        from: from.value,
+        name: name.value,
+        to: to.value,
+        sname: sname.value,
+    })
+}
+
+const humanDate = (dateString: string) => {
+    return new Date(dateString).toISOString().slice(0, 10).replace(/-/g, ' / ')
+}
 </script>
 
 <template>
@@ -57,16 +64,35 @@ watch(sensordata.result, (cb) => {
             {{ mach?.name }}
         </h3>
         <div
-            class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20 mb-10"
         >
-            <div v-for="(element, index) in mach?.sensors" :key="index">
+            <button
+                v-for="(element, index) in mach?.sensors"
+                :key="index"
+                class="bg-gradient-to-br from-blue-500 to-blue-700 text-white hover:from-blue-600 hover:to-blue-800 py-2"
+                @click="setSensor(element?.name)"
+            >
                 {{ element?.name }}
-            </div>
+            </button>
         </div>
-        <div v-for="(element, index) in data" :key="index">
-            {{ element?.value }}
-            {{ element?.timestamp }}
-        </div>
+        <table class="table w-full">
+            <thead class="border-b-2 border-gray-400 text-xl">
+                <tr>
+                    <td>Date</td>
+                    <td>Value</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(element, index) in data" :key="index">
+                    <td>
+                        {{ humanDate(element?.timestamp) }}
+                    </td>
+                    <td>
+                        {{ element?.value }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 </template>
 

@@ -36,23 +36,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 5,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 6,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 7,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 8,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 9,
           },
         ],
       },
@@ -61,23 +61,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 10,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 11,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 12,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 13,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 14,
           },
         ],
       },
@@ -95,23 +95,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 15,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 16,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 17,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 18,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 19,
           },
         ],
       },
@@ -120,23 +120,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 20,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 21,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 22,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 23,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 24,
           },
         ],
       },
@@ -145,23 +145,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 25,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 26,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 27,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 28,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 29,
           },
         ],
       },
@@ -179,23 +179,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 30,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 31,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 32,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 33,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 34,
           },
         ],
       },
@@ -204,23 +204,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 35,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 36,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 37,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 38,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 39,
           },
         ],
       },
@@ -229,23 +229,23 @@ const data = [
         data: [
           {
             timestamp: new Date().toISOString(),
-            value: 0,
+            value: 40,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 1,
+            value: 41,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 2,
+            value: 42,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 3,
+            value: 43,
           },
           {
             timestamp: new Date().toISOString(),
-            value: 4,
+            value: 44,
           },
         ],
       },

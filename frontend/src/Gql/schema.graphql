@@ -17,7 +17,7 @@ type Machine {
 type Query {
     machine(where: MachineWhereUniqInput!): Machine
     machines: [Machine!]
-    sensorData(from: DateTime!, name: String!, to: DateTime!, sensors: String!): [SensorDataPoint]
+    sensorData(from: DateTime!, name: String!, to: DateTime!, sname: String!): [SensorDataPoint]
 }
 
 type Sensor {
