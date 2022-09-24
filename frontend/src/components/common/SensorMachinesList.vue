@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import SensorMachineCard from './SensorMachineCard.vue'
-import gql from 'graphql-tag'
 import { useQuery } from '@vue/apollo-composable'
-import { watch } from 'vue'
-import { GETALLMACHINES } from "../../Gql/Queries";
+import { GETALLMACHINES } from '../../Gql/Queries'
 
 const { result } = useQuery(GETALLMACHINES)
 </script>

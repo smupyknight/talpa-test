@@ -4,8 +4,8 @@ interface IProps {
     long: string
     lat: string
 }
+
 const props = defineProps<IProps>()
-console.log(props)
 </script>
 
 <template>
